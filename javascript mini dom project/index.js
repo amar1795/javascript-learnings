@@ -1,6 +1,8 @@
 let sbtn=document.getElementById('sbtn');
 let ullist=document.getElementById('ullist');
 
+let search =document.getElementById('search');
+
 ullist.addEventListener('click',deletefunction);
 
 
@@ -36,5 +38,30 @@ function deletefunction(e) {
         }
     }
     
+}
+
+
+search.addEventListener('input',searchElement);
+
+function searchElement(e) {
+    
+    let text=e.target.value.toLowerCase();
+    console.log(text);
+    let itemlist=ullist.getElementsByTagName('li');
+
+    Array.from(itemlist).forEach(function(e) {
+
+        let licontent=e.firstChild.textContent;
+        if( licontent.toLowerCase().indexOf(text)!=-1)
+        {
+            e.style.display='block';
+        }
+        else
+        {
+            e.style.display='none'
+        }
+        
+    });
+
 }
 
