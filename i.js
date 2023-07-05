@@ -44,9 +44,9 @@ let newdivtext=document.createTextNode("Hello world")
 
 newdiv.appendChild(newdivtext);
 
-// let sbt=document.querySelector('input[type="text"]');
+let sbt=document.querySelector('input[type="text"]');
 let output=document.querySelector('.output');
-let sbt=document.querySelector('body');
+// let sbt=document.querySelector('body');
 
 
 // sbt.addEventListener('keydown',func)
@@ -57,14 +57,20 @@ let sbt=document.querySelector('body');
 // sbt.addEventListener('mouseover',func)
 // sbt.addEventListener('keyup',func)
 // sbt.addEventListener('keypress',func)
-sbt.addEventListener('mousemove',func)
+// sbt.addEventListener('mousemove',func)
+// sbt.addEventListener('cut',func)
+// sbt.addEventListener('paste',func)
+// sbt.addEventListener('change',func)
+sbt.addEventListener('input',func)
+// output.addEventListener('input',func)
 
 function func(e){
-
+// e.preventDefault();
+    // output.innerHTML='<h3>'+e.target.value+'</h3>'
     
     console.log(e.type)
     // output.innerHTML='<h2>mouseX:'+e.offsetX+'</h2><h2>mouseY:'+e.offsetY+'</h2>'
-    
-    document.body.style.backgroundColor="rgb("+e.offsetX+","+e.offsetY+",80)"
+    console.log(e.target.value)
+    // document.body.style.backgroundColor="rgb("+e.offsetX+","+e.offsetY+",80)"
 }
 
