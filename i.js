@@ -44,16 +44,27 @@ let newdivtext=document.createTextNode("Hello world")
 
 newdiv.appendChild(newdivtext);
 
-let sbt=document.querySelector(".sbt");
+// let sbt=document.querySelector('input[type="text"]');
+let output=document.querySelector('.output');
+let sbt=document.querySelector('body');
 
 
-sbt.addEventListener('mousedown',func)
+// sbt.addEventListener('keydown',func)
+// sbt.addEventListener('mousedown',func)
+// sbt.addEventListener('mouseup',func)
+// sbt.addEventListener('mouseenter',func)
+// sbt.addEventListener('mouseleave',func)
+// sbt.addEventListener('mouseover',func)
+// sbt.addEventListener('keyup',func)
+// sbt.addEventListener('keypress',func)
+sbt.addEventListener('mousemove',func)
 
 function func(e){
 
-    e.preventDefault();
-    console.log(e.type)
     
-
+    console.log(e.type)
+    // output.innerHTML='<h2>mouseX:'+e.offsetX+'</h2><h2>mouseY:'+e.offsetY+'</h2>'
+    
+    document.body.style.backgroundColor="rgb("+e.offsetX+","+e.offsetY+",80)"
 }
 
