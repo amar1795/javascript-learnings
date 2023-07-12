@@ -7,19 +7,19 @@ ullist.addEventListener('click',deletefunction);
 
 
 sbtn.addEventListener('click',func)
+let maininput=document.getElementById('maininput');
 
 function func(e) {
     
     console.log("submit button has been clicked");
-    let maininput=document.getElementById('maininput').value;
-    console.log(maininput);   
+    console.log("input value is "+maininput.value);   
     let li=document.createElement('li');
     li.className='list-group-item';
     let delete_button=document.createElement('button');
     delete_button.className='btn btn-danger float-end delete';
     delete_button.appendChild(document.createTextNode('X'));
     li.appendChild(delete_button);
-    li.appendChild(document.createTextNode(maininput));
+    li.appendChild(document.createTextNode(maininput.value));
     ullist.appendChild(li);
 }
 
@@ -51,7 +51,7 @@ function searchElement(e) {
 
     Array.from(itemlist).forEach(function(e) {
 
-        let licontent=e.firstChild.textContent;
+        let licontent=e.textContent;
         if( licontent.toLowerCase().indexOf(text)!=-1)
         {
             e.style.display='block';
